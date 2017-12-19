@@ -1,0 +1,374 @@
+{
+  "fournisseur": "OpenQuizzDB - Fournisseur de contenu libre (www.openquizzdb.org)",
+  "rédacteur": "Philippe Bresoux",
+  "thème": "Culture générale",
+  "difficulté": 2,
+  "quizz": {
+    "débutant": [
+      {
+        "id": 1,
+        "question": "Quel film à succès a réuni sur les écrans Sean Connery et Christophe Lambert ?",
+        "propositions": [
+          "Greystoke",
+          "Highlander",
+          "Mad Max",
+          "Subway"
+        ],
+        "réponse": "Highlander",
+        "anecdote": "'A Kind of Magic' est un album du groupe Queen, sorti en juin 1986, dont six de ses neuf morceaux sont utilisés dans le film 'Highlander'."
+      },
+      {
+        "id": 2,
+        "question": "Quel pays, dont les premiers habitants étaient des Newars, a pour capitale Katmandou ?",
+        "propositions": [
+          "Le Tibet",
+          "Le Pakistan",
+          "La Corée du Nord",
+          "Le Népal"
+        ],
+        "réponse": "Le Népal",
+        "anecdote": "Katmandou est la capitale politique et religieuse du Népal ainsi que la plus grande ville du pays."
+      },
+      {
+        "id": 3,
+        "question": "Dans quel film John Travolta incarne-t-il un ange tombé du ciel ?",
+        "propositions": [
+          "Johnny",
+          "Jerry",
+          "Sam",
+          "Michael"
+        ],
+        "réponse": "Michael",
+        "anecdote": "Deux journalistes enquêtent sur un soi-disant vrai ange vivant chez une dame âgée."
+      },
+      {
+        "id": 4,
+        "question": "Pour quel auteur-compositeur-interprète français aux 40 millions de disques vendus Capri est-il fini ?",
+        "propositions": [
+          "Charles Aznavour",
+          "Salvatore Adamo",
+          "Serge Lama",
+          "Hervé Vilard"
+        ],
+        "réponse": "Hervé Vilard",
+        "anecdote": "Didier Barbelivien, Michel Fugain et Danyel Gérard ont composé pour Hervé Vilard."
+      },
+      {
+        "id": 5,
+        "question": "Quel peintre, né en 1844, est également appelé « le Douanier » ?",
+        "propositions": [
+          "Edgar Degas",
+          "Salvador Dali",
+          "Henri Rousseau",
+          "Pablo Picasso"
+        ],
+        "réponse": "Henri Rousseau",
+        "anecdote": "Le premier portrait réalisé par le peintre Henri Rousseau semble être celui de sa première femme."
+      },
+      {
+        "id": 6,
+        "question": "Quel personnage imaginaire fut popularisé par le roman de E.R. Burroughs et par le cinéma ?",
+        "propositions": [
+          "King-Kong",
+          "Tarzan",
+          "Le Yéti",
+          "Nessie"
+        ],
+        "réponse": "Tarzan",
+        "anecdote": "Edgar Rice Burroughs a inspiré bon nombre d'auteurs de science-fiction et de fantastique."
+      },
+      {
+        "id": 7,
+        "question": "Quelle est la seule valeur à la roulette à porter la couleur verte ?",
+        "propositions": [
+          "Le cinquante",
+          "Le zéro",
+          "Le quarante",
+          "Le treize"
+        ],
+        "réponse": "Le zéro",
+        "anecdote": "À la roulette, chaque joueur mise sur un numéro qu'il espère être tiré."
+      },
+      {
+        "id": 8,
+        "question": "Quelle est la race du chien de Columbo, l'inspecteur très obstiné et perspicace ?",
+        "propositions": [
+          "Barbet",
+          "Bichon",
+          "Basset",
+          "Beagle"
+        ],
+        "réponse": "Basset",
+        "anecdote": "Interrompue en 1978, la série 'Columbo' a été ressuscitée en 1989, toujours avec Peter Falk."
+      },
+      {
+        "id": 9,
+        "question": "Quelle est la plus petite unité de mémoire utilisable sur un ordinateur ?",
+        "propositions": [
+          "Le méga",
+          "Le giga",
+          "Le bit",
+          "Le byte"
+        ],
+        "réponse": "Le bit",
+        "anecdote": "La mémoire est un composant matériel essentiel, présent dans tous les ordinateurs et consoles."
+      },
+      {
+        "id": 10,
+        "question": "Dans le langage familier, comment appelle-t-on la dent du petit enfant ?",
+        "propositions": [
+          "La quenotte",
+          "La bouillotte",
+          "La menotte",
+          "La marmotte"
+        ],
+        "réponse": "La quenotte",
+        "anecdote": "Il est particulièrement important de bien se brosser les dents de manière régulière."
+      }
+    ],
+    "confirmé": [
+      {
+        "id": 11,
+        "question": "Où se situe la célèbre base navale américaine de Guantanamo ?",
+        "propositions": [
+          "Au Mexique",
+          "À Cuba",
+          "À Hawaii",
+          "Au Paraguay"
+        ],
+        "réponse": "À Cuba",
+        "anecdote": "La base de Guantanamo détient des personnes qualifiées de « combattants hors-la-loi »."
+      },
+      {
+        "id": 12,
+        "question": "Quelle est la spécialité du sportif tunisien Oussama Mellouli ?",
+        "propositions": [
+          "Le marathon",
+          "La boxe",
+          "Le football",
+          "La natation"
+        ],
+        "réponse": "La natation",
+        "anecdote": "Oussama Mellouli est le premier champion olympique tunisien en natation."
+      },
+      {
+        "id": 13,
+        "question": "Quel acteur français a le premier rôle dans le film 'Le Guépard' ?",
+        "propositions": [
+          "Jean-Paul Belmondo",
+          "Jean Gabin",
+          "Alain Delon",
+          "Claude Brasseur"
+        ],
+        "réponse": "Alain Delon",
+        "anecdote": "Le film 'Le Guépard' décrit la chute de l'aristocratie italienne, dont la scène du bal donne la clé."
+      },
+      {
+        "id": 14,
+        "question": "Qui était le compagnon de Paul de Tarse, désigné aussi sous le nom de saint Paul ?",
+        "propositions": [
+          "Saint Marc",
+          "Saint Jean",
+          "Saint Luc",
+          "Saint Matthieu"
+        ],
+        "réponse": "Saint Luc",
+        "anecdote": "Sans faire partie des « Douze », Saint Paul a marqué le christianisme par son interprétation de l'enseignement de Jésus."
+      },
+      {
+        "id": 15,
+        "question": "Quel titre de noblesse est immédiatement inférieur à celui de comte ?",
+        "propositions": [
+          "Duc",
+          "Vicomte",
+          "Archiduc",
+          "Marquis"
+        ],
+        "réponse": "Vicomte",
+        "anecdote": "« Vicomte » est une distinction héréditaire à laquelle ne sont attachés aucuns pouvoirs."
+      },
+      {
+        "id": 16,
+        "question": "Quelle est la capitale de la Nouvelle-Zélande, pays d'Océanie au sud-ouest de l'océan Pacifique ?",
+        "propositions": [
+          "Dublin",
+          "Sydney",
+          "Auckland",
+          "Wellington"
+        ],
+        "réponse": "Wellington",
+        "anecdote": "Troisième ville la plus peuplée du pays, Wellington fait partie des douze meilleures villes dans laquelle vivre."
+      },
+      {
+        "id": 17,
+        "question": "Quel film a réuni sur les écrans Isabelle Adjani et Sharon Stone ?",
+        "propositions": [
+          "Ange et Démon",
+          "Les sorcières",
+          "Les ensorceleuses",
+          "Diabolique"
+        ],
+        "réponse": "Diabolique",
+        "anecdote": "La femme et la maîtresse d'un professeur s'associent pour planifier son assassinat."
+      },
+      {
+        "id": 18,
+        "question": "Comment est également appelée la 'Transat Jacques Vabre' ?",
+        "propositions": [
+          "Le Vendée Globe",
+          "Le Trophée du rhum",
+          "La Route du rhum",
+          "La Route du café"
+        ],
+        "réponse": "La Route du café",
+        "anecdote": "La Transat Jacques Vabre, course transatlantique en double, se déroule tous les deux ans depuis 1993."
+      },
+      {
+        "id": 19,
+        "question": "Quel oiseau vivant dans lhémisphère nord nage le plus vite ?",
+        "propositions": [
+          "Le pingouin",
+          "La pie",
+          "Le martinet",
+          "La bécassine"
+        ],
+        "réponse": "Le pingouin",
+        "anecdote": "Par abus de langage, le pingouin est souvent confondu avec le manchot, de par sa ressemblance avec le Grand Pingouin."
+      },
+      {
+        "id": 20,
+        "question": "Quelle est la plus grosse des planètes du Système solaire ?",
+        "propositions": [
+          "Saturne",
+          "Jupiter",
+          "Uranus",
+          "Neptune"
+        ],
+        "réponse": "Jupiter",
+        "anecdote": "Jupiter est une planète géante gazeuse, la plus grosse planète du système solaire."
+      }
+    ],
+    "expert": [
+      {
+        "id": 21,
+        "question": "Apparu il y a 450 millions d'années, à quelle classe animale le scorpion appartient-il ?",
+        "propositions": [
+          "Aux insectes",
+          "Aux arachnides",
+          "Aux mammifères",
+          "Aux reptiles"
+        ],
+        "réponse": "Aux arachnides",
+        "anecdote": "Les scorpions se distinguent des araignées par un aiguillon venimeux situé au bout de leur abdomen."
+      },
+      {
+        "id": 22,
+        "question": "Quel frère d'une actrice prénommée Mary a réalisé le film 'La fièvre du samedi soir' ?",
+        "propositions": [
+          "John Badham",
+          "John Payne",
+          "John Travolta",
+          "John Remezick"
+        ],
+        "réponse": "John Badham",
+        "anecdote": "'La fièvre du samedi soir' fut un des principaux vecteurs de diffusion de la musique et de la mode disco."
+      },
+      {
+        "id": 23,
+        "question": "Au Moyen Âge, comment appelait-on un village fortifié ?",
+        "propositions": [
+          "Un château fort",
+          "Une tour",
+          "Un rempart",
+          "Une bastide"
+        ],
+        "réponse": "Une bastide",
+        "anecdote": "Les bastides les plus connues sont celles de Monflanquin, Monpazier, Grenade ou bien encore Libourne."
+      },
+      {
+        "id": 24,
+        "question": "Quelle ville du Kent est célèbre pour sa source miraculeuse ?",
+        "propositions": [
+          "Dartford",
+          "Ramsgate",
+          "Gillingham",
+          "Tunbridge Wells"
+        ],
+        "réponse": "Tunbridge Wells",
+        "anecdote": "De nombreuses personnes célèbres sont venues en cure à Tunbridge Wells, comme la reine Victoria."
+      },
+      {
+        "id": 25,
+        "question": "Quel apéritif à base de vin est aromatisé avec des plantes amères et toniques ?",
+        "propositions": [
+          "Le piccolo",
+          "La gentiane",
+          "Le kokebok",
+          "Le vermouth"
+        ],
+        "réponse": "Le vermouth",
+        "anecdote": "Du plus sec au plus doux, on trouve le vermouth sec, le blanc, le rosé et le rouge."
+      },
+      {
+        "id": 26,
+        "question": "À quel écrivain français doit-on le roman intitulé 'Le sagouin' ?",
+        "propositions": [
+          "Mauriac",
+          "Giono",
+          "Barjavel",
+          "Camus"
+        ],
+        "réponse": "Mauriac",
+        "anecdote": "Dans ce roman en quatre parties, on peut supposer que l'action se passe vers 1920."
+      },
+      {
+        "id": 27,
+        "question": "Quel président Français trouva la mort dans une situation « inhabituelle » ?",
+        "propositions": [
+          "Félix Faure",
+          "René Coty",
+          "Raymond Poincaré",
+          "Georges Pompidou"
+        ],
+        "réponse": "Félix Faure",
+        "anecdote": "On a dit de Félix Faure qu'il était plus célèbre par sa mort que par sa vie."
+      },
+      {
+        "id": 28,
+        "question": "Comment appelle-t-on le versant de la montagne non situé au soleil ?",
+        "propositions": [
+          "Adret",
+          "Étant",
+          "Ressac",
+          "Ubac"
+        ],
+        "réponse": "Ubac",
+        "anecdote": "Dans l'hémisphère Nord, l'ubac est généralement la face Nord d'une montagne."
+      },
+      {
+        "id": 29,
+        "question": "Quel oiseau palmipède a pour particularité de construire un nid flottant ?",
+        "propositions": [
+          "La grève",
+          "Le grèbe",
+          "Le grèle",
+          "La grène"
+        ],
+        "réponse": "Le grèbe",
+        "anecdote": "La position des pattes, très courtes et très en arrière par rapport au corps, a valu au grèbe le nom de « pieds au derrière »."
+      },
+      {
+        "id": 30,
+        "question": "Un bédane, qui doit son nom à sa ressemblance avec un bec de canard, est un outil proche du...",
+        "propositions": [
+          "Maillet",
+          "Rabot",
+          "Ciseau à bois",
+          "Vilebrequin"
+        ],
+        "réponse": "Ciseau à bois",
+        "anecdote": "Le bédane est un outil parfois utilisé pour réaliser des pièces en bois tournées entre pointes."
+      }
+    ]
+  }
+}
