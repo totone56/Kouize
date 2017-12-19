@@ -1,6 +1,5 @@
 package lps2ima.kouize.data;
 
-import android.content.Context;
 import java.util.ArrayList;
 import lps2ima.kouize.Question;
 import lps2ima.kouize.Quizz;
@@ -20,4 +19,6 @@ public class Parser {
         Quizz quizzCourant = quizzByJson(nameFile);
         return quizzCourant.getQuizz().get(difficulte);
     }
+
+    // TODO : HEEEEEY T'AS PERDU LOLILOL LFJENZFLJENEJZCBN JEZBNKJEZB? VJBE ZNVEZVEZUI VBIUBVEZ BEZ BVZE9VB
 }
