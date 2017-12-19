@@ -2,11 +2,11 @@ package lps2ima.kouize.data;
 
 import android.content.Context;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 import lps2ima.kouize.Question;
-import lps2ima.kouize.Quizz;
 
 /**
  * Created by toton on 13/12/2017.
@@ -23,21 +23,38 @@ public class QuizzHelper {
         indexQuestionCourante = -1;
     }
 
-    //Quand l'utilisateur choisi son quizz et sa difficulté, on initialise notre objet avec cette méthode.
+    /**
+     * @param nameFile - Chemin + nom du fichier .json.
+     * @param difficulte - Correspond à la difficulté du quizz choisi par le joueur :
+     *                   <li>"débutant"</li>
+     *                   <li>"confirmé"</li>
+     *                   <li>"expert"</li>
+     */
     public void initQuizzHelper(String nameFile, String difficulte) {
-        //TODO : APPEL AU PARSER POUR REMPLIR LES ATTRIBUTS DU QUIZZHELPER
-        questions = Parser.questionsByJson(nameFile, difficulte);
+        try {
+            questions = Parser.questionsByJson(nameFile, difficulte);
+        } catch (FileNotFoundException e) {
+            e.getMessage();
+        }
         indexQuestionCourante = 0;
     }
 
-    //Pour la vue des questions, appel à cette méthode pour avoir la question courante
+    /**
+     * @return la question courante. Celle qui va être utilisé pour la vue.
+     */
     public Question getQuestionCourante() {
         return questions.get(indexQuestionCourante);
     }
 
-    //Lors du passage à la question suivante, appel à cette méthode pour passer à la question suivante.
+    /**
+     * Permet de passer à la question suivante en augmentant de 1 l'index courant. Sauf si on est à la dernière question.
+     */
     public void questionSuivante() {
-        indexQuestionCourante ++;
+        if(questions.size() > indexQuestionCourante+1) {
+            indexQuestionCourante ++;
+        } else {
+            //TODO : EXCEPTION OU MESSAGE ???
+        }
     }
 
     //A VOIR SI BESOIN DE GETTER ET SETTER ICI

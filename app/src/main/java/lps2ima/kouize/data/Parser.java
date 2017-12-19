@@ -1,5 +1,9 @@
 package lps2ima.kouize.data;
 
+import com.google.gson.Gson;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import lps2ima.kouize.Question;
 import lps2ima.kouize.Quizz;
@@ -9,16 +13,27 @@ import lps2ima.kouize.Quizz;
  */
 
 public class Parser {
-    //Surement besoin ailleurs que pour init quizzHelper
-    public static Quizz quizzByJson(String nameFile) {
-        //TODO : Récupérer un quizz via un fichier JSON en utilisant l'api Google
-        return new Quizz();
+    /**
+     * @param nameFile - Chemin + nom du fichier .json
+     * @return le quizz souhaité.
+     * @throws FileNotFoundException
+     */
+    public static Quizz quizzByJson(String nameFile) throws FileNotFoundException {
+        FileReader reader = new FileReader(nameFile);
+        return new Gson().fromJson(reader, Quizz.class);
     }
 
-    public static ArrayList<Question> questionsByJson(String nameFile, String difficulte) {
+    /**
+     * @param nameFile - Chemin + nom du fichier .json
+     * @param difficulte - correspondant au niveau de difficulté du quizz :
+     *                   <li>"débutant"</li>
+     *                   <li>"confirmé"</li>
+     *                   <li>"expert"</li>
+     * @return une ArrayList contenant les questions souhaitées.
+     * @throws FileNotFoundException
+     */
+    public static ArrayList<Question> questionsByJson(String nameFile, String difficulte) throws FileNotFoundException {
         Quizz quizzCourant = quizzByJson(nameFile);
         return quizzCourant.getQuizz().get(difficulte);
     }
-
-    // TODO : HEEEEEY T'AS PERDU LOLILOL LFJENZFLJENEJZCBN JEZBNKJEZB? VJBE ZNVEZVEZUI VBIUBVEZ BEZ BVZE9VB
 }
