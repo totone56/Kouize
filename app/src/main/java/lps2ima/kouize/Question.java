@@ -1,26 +1,22 @@
 package lps2ima.kouize;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by toton on 12/12/2017.
  */
 
 public class Question {
 
+    private int id;
     private String question;
-    private String[] reponses;
-    private int reponse;
+    private List<String> propositions;
     private String anecdote;
-    private int difficulte;
-
-    public Question(String question, String[] reponses, int reponse, String anecdote, int difficulte) {
-        this.question = question;
-        this.reponses = reponses;
-        this.reponse = reponse;
-        this.anecdote = anecdote;
-        this.difficulte = difficulte;
-    }
-
-    public Question(){}
+    @SerializedName(value = "reponse", alternate = {"réponse"})
+    private String reponse;
 
     public String getQuestion() {
         return question;
@@ -30,23 +26,11 @@ public class Question {
         this.question = question;
     }
 
-    public String[] getReponses() {
-        return reponses;
-    }
-
-    public String getReponse(int i) {
-        return this.reponses[i];
-    }
-
-    public void setReponses(String[] reponses) {
-        this.reponses = reponses;
-    }
-
-    public int getReponse() {
+    public String getReponse() {
         return reponse;
     }
 
-    public void setReponse(int reponse) {
+    public void setReponse(String reponse) {
         this.reponse = reponse;
     }
 
@@ -58,11 +42,19 @@ public class Question {
         this.anecdote = anecdote;
     }
 
-    public int getDifficulte() {
-        return difficulte;
+    public int getId() {
+        return id;
     }
 
-    public void setDifficulte(int difficulte) {
-        this.difficulte = difficulte;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<String> getPropositions() {
+        return propositions;
+    }
+
+    public void setPropositions(List<String> propositions) {
+        this.propositions = propositions;
     }
 }
