@@ -9,11 +9,11 @@ import java.util.ArrayList;
 public class Quizz {
 
     private ArrayList<Question> questions;
-    int difficulté;
+    int difficulte;
 
-    public Quizz (int difficulté) {
-        this.difficulté = difficulté;
-        createQuestions(difficulté);
+    public Quizz (int difficulte) {
+        this.difficulte = difficulte;
+        createQuestions(difficulte);
     }
 
     public Question getQuestion (int i){
@@ -32,11 +32,11 @@ public class Quizz {
         this.questions = questions;
     }
 
-    public int getDifficulté() {
-        return difficulté;
+    public int getDifficulte() {
+        return difficulte;
     }
 
-    public void setDifficulté(int difficulté) {
-        this.difficulté = difficulté;
+    public void setDifficulte(int difficulte) {
+        this.difficulte = difficulte;
     }
 }
