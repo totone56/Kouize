@@ -6,7 +6,7 @@ import android.app.Application;
  * Created by toton on 13/12/2017.
  */
 
-public class MyApplication extends Application {
+public class KouizeApp extends Application {
 
     int sessionScore;
     String user;

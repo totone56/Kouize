@@ -3,7 +3,7 @@
     package="lps2ima.kouize">
 
     <application
-        android:name=".MyApplication"
+        android:name=".KouizeApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".QuestionActivity" />
-        <activity android:name=".AnswerActivity"></activity>
+        <activity android:name=".AnswerActivity" />
     </application>
 
 </manifest>

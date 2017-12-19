@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 {
                     userName = name.getText().toString();
                     Toast.makeText(getApplicationContext(), userName + " / " + difficulty, Toast.LENGTH_LONG).show(); // Test
-                    ((MyApplication) getApplication()).setUser(userName);
-                    if (difficulty.equals("Facile")) ((MyApplication) getApplication()).setDifficulty(0);
-                    else if (difficulty.equals("Moyen")) ((MyApplication) getApplication()).setDifficulty(1);
-                    else ((MyApplication) getApplication()).setDifficulty(2);
+                    ((KouizeApp) getApplication()).setUser(userName);
+                    if (difficulty.equals("Facile")) ((KouizeApp) getApplication()).setDifficulty(0);
+                    else if (difficulty.equals("Moyen")) ((KouizeApp) getApplication()).setDifficulty(1);
+                    else ((KouizeApp) getApplication()).setDifficulty(2);
                 } else {
                     Toast.makeText(getApplicationContext(), "TAT PAS CLIKUER PARTOUS WESH", Toast.LENGTH_SHORT).show();
                 }
