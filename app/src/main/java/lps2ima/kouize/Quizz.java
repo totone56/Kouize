@@ -2,8 +2,8 @@ package lps2ima.kouize;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by toton on 12/12/2017.
@@ -18,7 +18,7 @@ public class Quizz {
     private String theme;
     @SerializedName(value = "difficulte", alternate = {"difficulté"})
     private int difficulte;
-    private Map<String, List<Question>> quizz;
+    private HashMap<String, ArrayList<Question>> quizz;
 
     public String getFournisseur() {
         return fournisseur;
@@ -52,11 +52,11 @@ public class Quizz {
         this.difficulte = difficulte;
     }
 
-    public Map<String, List<Question>> getQuizz() {
+    public HashMap<String, ArrayList<Question>> getQuizz() {
         return quizz;
     }
 
-    public void setQuizz(Map<String, List<Question>> quizz) {
+    public void setQuizz(HashMap<String, ArrayList<Question>> quizz) {
         this.quizz = quizz;
     }
 }

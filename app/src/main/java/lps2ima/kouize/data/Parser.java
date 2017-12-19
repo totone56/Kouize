@@ -10,15 +10,14 @@ import lps2ima.kouize.Quizz;
  */
 
 public class Parser {
-
-    public Context context;
-    public Quizz quizz;
-    public ArrayList<Question> questions;
-
-    public Parser(Context context, Quizz quizz) {
-        this.context = context;
-        this.quizz = quizz;
-        this.questions = quizz.getQuestions();
+    //Surement besoin ailleurs que pour init quizzHelper
+    public static Quizz quizzByJson(String nameFile) {
+        //TODO : Récupérer un quizz via un fichier JSON en utilisant l'api Google
+        return new Quizz();
     }
 
+    public static ArrayList<Question> questionsByJson(String nameFile, String difficulte) {
+        Quizz quizzCourant = quizzByJson(nameFile);
+        return quizzCourant.getQuizz().get(difficulte);
+    }
 }
