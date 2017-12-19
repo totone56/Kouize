@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void createDialog(final Button buttonText) {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-        builder.setTitle("Choix de difficulté");
+        builder.setTitle("Choix de difficulte");
         builder.setItems(diffilculties, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
