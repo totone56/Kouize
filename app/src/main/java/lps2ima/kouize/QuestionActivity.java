@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class QuestionActivity extends AppCompatActivity {
 
+    Question question;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
