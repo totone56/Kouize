@@ -4,7 +4,6 @@ import android.content.Context;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 
 import lps2ima.kouize.Question;
 
@@ -15,7 +14,9 @@ import lps2ima.kouize.Question;
 public class QuizzHelper {
     public Context context;
     private int indexQuestionCourante; //ou id de la question courante, à voir ??????
-    private List<Question> questions;
+
+
+    private ArrayList<Question> questions;
 
     public QuizzHelper(Context context) {
         this.context = context;
@@ -25,7 +26,7 @@ public class QuizzHelper {
 
     /**
      * @param nameFile - Chemin + nom du fichier .json.
-     * @param difficulte - Correspond à la difficulté du quizz choisi par le joueur :
+     * @param difficulte - Correspond à la difficulté du culture_generale choisi par le joueur :
      *                   <li>"débutant"</li>
      *                   <li>"confirmé"</li>
      *                   <li>"expert"</li>
@@ -57,5 +58,13 @@ public class QuizzHelper {
         }
     }
 
+    /**
+     *
+     * @return la liste des questions
+     */
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
     //A VOIR SI BESOIN DE GETTER ET SETTER ICI
 }

@@ -14,7 +14,7 @@ public class Quizz {
     private String fournisseur;
     @SerializedName(value = "redacteur", alternate = {"rédacteur"})
     private String redacteur;
-    @SerializedName(value = "reponse", alternate = {"réponse"})
+    @SerializedName(value = "theme", alternate = {"thème"})
     private String theme;
     @SerializedName(value = "difficulte", alternate = {"difficulté"})
     private int difficulte;

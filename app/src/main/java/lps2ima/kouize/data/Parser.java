@@ -15,7 +15,7 @@ import lps2ima.kouize.Quizz;
 public class Parser {
     /**
      * @param nameFile - Chemin + nom du fichier .json
-     * @return le quizz souhaité.
+     * @return le culture_generale souhaité.
      * @throws FileNotFoundException
      */
     public static Quizz quizzByJson(String nameFile) throws FileNotFoundException {
@@ -25,7 +25,7 @@ public class Parser {
 
     /**
      * @param nameFile - Chemin + nom du fichier .json
-     * @param difficulte - correspondant au niveau de difficulté du quizz :
+     * @param difficulte - correspondant au niveau de difficulté du culture_generale :
      *                   <li>"débutant"</li>
      *                   <li>"confirmé"</li>
      *                   <li>"expert"</li>
