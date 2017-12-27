@@ -14,4 +14,8 @@
         completions."
     </string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="difficulte">Difficulté</string>
+    <string name="theme">Thème</string>
+    <string name="commencer">Commencer</string>
+    <string name="choix_nom">Choisissez un nom</string>
 </resources>

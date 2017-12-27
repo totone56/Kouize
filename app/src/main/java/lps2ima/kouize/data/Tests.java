@@ -1,5 +1,6 @@
 package lps2ima.kouize.data;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import lps2ima.kouize.Question;
@@ -18,8 +19,8 @@ public class Tests {
          *****************/
 
         //Création du quizz grâce au fichier .json
-        Quizz quizz = Parser.quizzByJson("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\culture_generale.json");
+        Quizz quizz = Parser.quizzByJson(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
+                "UE3\\Kouize\\app\\src\\main\\res\\raw\\culture_generale.json"));
 
         //On affiche quelques informations pour voir si tout marche bien.
         System.out.println("Thème du culture_generale : " + quizz.getTheme());
@@ -37,8 +38,8 @@ public class Tests {
         System.out.println("\n===================================================================\n");
 
         //Création du quizz grâce au fichier .json
-        Quizz quizz2 = Parser.quizzByJson("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json");
+        Quizz quizz2 = Parser.quizzByJson(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
+                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json"));
 
         //On affiche quelques informations pour voir si tout marche bien.
         System.out.println("Thème du quizz : " + quizz2.getTheme());
@@ -64,8 +65,8 @@ public class Tests {
         QuizzHelper quizzHelper = new QuizzHelper(null);
 
         //Initialisation de l'objet
-        quizzHelper.initQuizzHelper("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json", "expert");
+        quizzHelper.initQuizzHelper(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
+                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json"), "débutant");
 
         //Affichage de quelques valeurs pour tester
         System.out.println("Question courante après l\'initialisation : " + quizzHelper.getQuestions()

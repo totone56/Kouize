@@ -14,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="Choisissez un nom"
+        android:hint="@string/choix_nom"
         android:inputType="textPersonName"
         android:paddingTop="100dp" />
 
@@ -27,16 +27,26 @@
         android:layout_marginBottom="57dp"
         android:layout_marginEnd="13dp"
         android:layout_weight="1"
-        android:text="Ok" />
+        android:text="@string/commencer" />
 
     <Button
         android:id="@+id/difficultyMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/themeMain"
+        android:layout_below="@+id/themeMain"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:text="@string/difficulte" />
+
+    <Button
+        android:id="@+id/themeMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/nameText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="92dp"
         android:ems="10"
-        android:text="Difficulté" />
+        android:text="@string/theme" />
 
 </android.widget.RelativeLayout>

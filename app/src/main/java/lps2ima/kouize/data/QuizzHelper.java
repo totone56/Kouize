@@ -2,6 +2,7 @@ package lps2ima.kouize.data;
 
 import android.content.Context;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -14,8 +15,6 @@ import lps2ima.kouize.Question;
 public class QuizzHelper {
     public Context context;
     private int indexQuestionCourante; //ou id de la question courante, à voir ??????
-
-
     private ArrayList<Question> questions;
 
     public QuizzHelper(Context context) {
@@ -25,26 +24,30 @@ public class QuizzHelper {
     }
 
     /**
-     * @param nameFile - Chemin + nom du fichier .json.
+     * @param file - Chemin + nom du fichier .json.
      * @param difficulte - Correspond à la difficulté du culture_generale choisi par le joueur :
      *                   <li>"débutant"</li>
      *                   <li>"confirmé"</li>
      *                   <li>"expert"</li>
      */
-    public void initQuizzHelper(String nameFile, String difficulte) {
+    public void initQuizzHelper(File file, String difficulte) {
         try {
-            questions = Parser.questionsByJson(nameFile, difficulte);
+            questions = Parser.questionsByJson(file, difficulte);
+            indexQuestionCourante = 0;
         } catch (FileNotFoundException e) {
             e.getMessage();
         }
-        indexQuestionCourante = 0;
     }
 
     /**
      * @return la question courante. Celle qui va être utilisé pour la vue.
      */
     public Question getQuestionCourante() {
-        return questions.get(indexQuestionCourante);
+        if(indexQuestionCourante >= 0) {
+            return questions.get(indexQuestionCourante);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -66,5 +69,10 @@ public class QuizzHelper {
     public ArrayList<Question> getQuestions() {
         return questions;
     }
+
+    public int getIndexQuestionCourante() {
+        return indexQuestionCourante;
+    }
+
     //A VOIR SI BESOIN DE GETTER ET SETTER ICI
 }

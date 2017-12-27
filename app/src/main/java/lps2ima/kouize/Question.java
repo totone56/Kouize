@@ -1,13 +1,15 @@
 package lps2ima.kouize;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by toton on 12/12/2017.
  */
 
-public class Question {
+public class Question  implements Serializable {
 
     private int id;
     private String question;

@@ -11,6 +11,9 @@ import java.util.HashMap;
 
 public class Quizz {
 
+    public static String[] diffilculties = {"Débutant", "Confirmé", "Expert"};
+    public static String[] themes = {"Culture Generale", "Linux"};
+
     private String fournisseur;
     @SerializedName(value = "redacteur", alternate = {"rédacteur"})
     private String redacteur;

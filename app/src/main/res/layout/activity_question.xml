@@ -19,6 +19,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <RadioGroup
+        android:id="@+id/answerGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/question"
