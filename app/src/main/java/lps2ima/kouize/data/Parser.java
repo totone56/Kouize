@@ -1,11 +1,20 @@
 package lps2ima.kouize.data;
 
+import android.content.Context;
+
 import com.google.gson.Gson;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
+
+import lps2ima.kouize.KouizeApp;
 import lps2ima.kouize.Question;
 import lps2ima.kouize.Quizz;
 
@@ -14,6 +23,13 @@ import lps2ima.kouize.Quizz;
  */
 
 public class Parser {
+
+    Context context;
+
+    public Parser() throws FileNotFoundException, IOException {
+        this.context = KouizeApp.getContext();
+    }
+
     /**
      * @param file - fichier .json
      * @return le culture_generale souhaité.
@@ -25,7 +41,7 @@ public class Parser {
     }
 
     /**
-     * @param file - fichier .json
+     * @param file       - fichier .json
      * @param difficulte - correspondant au niveau de difficulté du culture_generale :
      *                   <li>"débutant"</li>
      *                   <li>"confirmé"</li>

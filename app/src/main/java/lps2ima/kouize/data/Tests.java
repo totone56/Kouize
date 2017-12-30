@@ -1,10 +1,19 @@
 package lps2ima.kouize.data;
 
+import android.app.Application;
+import android.content.Context;
+
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import lps2ima.kouize.KouizeApp;
 import lps2ima.kouize.Question;
 import lps2ima.kouize.Quizz;
+import lps2ima.kouize.R;
 
 /**
  * Created by Asouphie on 24/12/2017.
@@ -19,8 +28,11 @@ public class Tests {
          *****************/
 
         //Création du quizz grâce au fichier .json
-        Quizz quizz = Parser.quizzByJson(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\culture_generale.json"));
+        Context context = KouizeApp.getContext();
+        File f = new File("raw/culture_generale");
+        InputStream in = context.getResources().openRawResource(R.raw.culture_generale);
+        in = new BufferedInputStream(new FileInputStream(f));
+        Quizz quizz = Parser.quizzByJson(f);
 
         //On affiche quelques informations pour voir si tout marche bien.
         System.out.println("Thème du culture_generale : " + quizz.getTheme());
@@ -38,8 +50,10 @@ public class Tests {
         System.out.println("\n===================================================================\n");
 
         //Création du quizz grâce au fichier .json
-        Quizz quizz2 = Parser.quizzByJson(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json"));
+        f = new File("raw/culture_generale");
+        in = context.getResources().openRawResource(R.raw.linux);
+        in = new BufferedInputStream(new FileInputStream(f));
+        Quizz quizz2 = Parser.quizzByJson(new File("raw/linux"));
 
         //On affiche quelques informations pour voir si tout marche bien.
         System.out.println("Thème du quizz : " + quizz2.getTheme());
@@ -65,8 +79,10 @@ public class Tests {
         QuizzHelper quizzHelper = new QuizzHelper(null);
 
         //Initialisation de l'objet
-        quizzHelper.initQuizzHelper(new File("C:\\Users\\Asouphie\\Documents\\LP_S2IMa\\" +
-                "UE3\\Kouize\\app\\src\\main\\res\\raw\\linux.json"), "débutant");
+        f = new File("raw/linux");
+        in = context.getResources().openRawResource(R.raw.linux);
+        in = new BufferedInputStream(new FileInputStream(f));
+        quizzHelper.initQuizzHelper(f, "débutant");
 
         //Affichage de quelques valeurs pour tester
         System.out.println("Question courante après l\'initialisation : " + quizzHelper.getQuestions()
@@ -75,4 +91,8 @@ public class Tests {
             System.out.println("Question " + quizzHelper.getQuestions().indexOf(question) + " : " + question.getQuestion());
         }
     }
+
+
+
+
 }

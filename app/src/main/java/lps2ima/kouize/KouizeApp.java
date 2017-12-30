@@ -1,6 +1,7 @@
 package lps2ima.kouize;
 
 import android.app.Application;
+import android.content.Context;
 
 /**
  * Created by toton on 13/12/2017.
@@ -8,12 +9,15 @@ import android.app.Application;
 
 public class KouizeApp extends Application {
 
-    int sessionScore;
-    String user;
-    int difficulty;
+    public int sessionScore;
+    public String user;
+    public int difficulty;
+    public static Context context;
 
+    @Override
     public void onCreate(){
         super.onCreate();
+        context = getApplicationContext();
     }
 
     public int getSessionScore() {
@@ -38,5 +42,9 @@ public class KouizeApp extends Application {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public static Context getContext() {
+        return context;
     }
 }
