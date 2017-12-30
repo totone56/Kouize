@@ -70,7 +70,7 @@ public class QuestionActivity extends AppCompatActivity {
         String difficulty = extras.getString("difficulty").toLowerCase();
 
         //ICI QUE CA PLANTE :
-        File f = new File("res/raw/" + nameFile + ".json");
+        File f = new File(getApplicationContext().getPackageResourcePath() + "/res/raw/" + nameFile + ".json");
         int rawId = getResources().getIdentifier(nameFile, "raw", getPackageName());
         InputStream in = getApplicationContext().getResources().openRawResource(rawId);
         try {

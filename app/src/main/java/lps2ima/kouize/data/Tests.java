@@ -29,7 +29,7 @@ public class Tests {
 
         //Création du quizz grâce au fichier .json
         Context context = KouizeApp.getContext();
-        File f = new File("res/raw/culture_generale.json");
+        File f = new File(context.getPackageResourcePath() + "/raw/culture_generale.json");
         InputStream in = context.getResources().openRawResource(R.raw.culture_generale);
         in = new BufferedInputStream(new FileInputStream(f));
         Quizz quizz = Parser.quizzByJson(f);
@@ -50,7 +50,7 @@ public class Tests {
         System.out.println("\n===================================================================\n");
 
         //Création du quizz grâce au fichier .json
-        f = new File("res/raw/culture_generale.json");
+        f = new File(context.getPackageResourcePath() + "/raw/culture_generale.json");
         in = context.getResources().openRawResource(R.raw.linux);
         in = new BufferedInputStream(new FileInputStream(f));
         Quizz quizz2 = Parser.quizzByJson(f);
@@ -79,7 +79,7 @@ public class Tests {
         QuizzHelper quizzHelper = new QuizzHelper(null);
 
         //Initialisation de l'objet
-        f = new File("res/raw/linux.json");
+        f = new File(context.getPackageResourcePath() + "/raw/linux.json");
         in = context.getResources().openRawResource(R.raw.linux);
         in = new BufferedInputStream(new FileInputStream(f));
         quizzHelper.initQuizzHelper(f, "débutant");
