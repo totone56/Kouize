@@ -53,7 +53,7 @@ public class Tests {
         f = new File("res/raw/culture_generale.json");
         in = context.getResources().openRawResource(R.raw.linux);
         in = new BufferedInputStream(new FileInputStream(f));
-        Quizz quizz2 = Parser.quizzByJson(new File("raw/linux"));
+        Quizz quizz2 = Parser.quizzByJson(f);
 
         //On affiche quelques informations pour voir si tout marche bien.
         System.out.println("Thème du quizz : " + quizz2.getTheme());
