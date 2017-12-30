@@ -10,7 +10,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStream;
@@ -68,7 +70,15 @@ public class QuestionActivity extends AppCompatActivity {
         String difficulty = extras.getString("difficulty").toLowerCase();
 
         //ICI QUE CA PLANTE :
-        quizzHelper.initQuizzHelper(new File("res/raw/" + nameFile + ".json"), difficulty);
+        File f = new File("res/raw/" + nameFile + ".json");
+        int rawId = getResources().getIdentifier(nameFile, "raw", getPackageName());
+        InputStream in = getApplicationContext().getResources().openRawResource(rawId);
+        try {
+            in = new BufferedInputStream(new FileInputStream(f));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        quizzHelper.initQuizzHelper(f, difficulty);
         /////////////////////
 
         //Puis je charge la vue des questions
