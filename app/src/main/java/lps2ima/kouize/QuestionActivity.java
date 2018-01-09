@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import lps2ima.kouize.data.Parser;
 import lps2ima.kouize.data.QuizzHelper;
 
+import static java.lang.System.exit;
+
 public class QuestionActivity extends AppCompatActivity {
 
     static final int REQUEST = 1;
@@ -69,17 +71,8 @@ public class QuestionActivity extends AppCompatActivity {
         String nameFile = extras.getString("theme").replace(" ", "_").toLowerCase();
         String difficulty = extras.getString("difficulty").toLowerCase();
 
-        //ICI QUE CA PLANTE :
-        File f = new File(getApplicationContext().getPackageResourcePath() + "/res/raw/" + nameFile + ".json");
-        int rawId = getResources().getIdentifier(nameFile, "raw", getPackageName());
-        InputStream in = getApplicationContext().getResources().openRawResource(rawId);
-        try {
-            in = new BufferedInputStream(new FileInputStream(f));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        quizzHelper.initQuizzHelper(f, difficulty);
-        /////////////////////
+        //Puis l'initialise mon quizzHelper
+        quizzHelper.initQuizzHelper(nameFile, difficulty);
 
         //Puis je charge la vue des questions
         chargeView();
@@ -89,6 +82,18 @@ public class QuestionActivity extends AppCompatActivity {
         TextView question = (TextView) findViewById(R.id.question);
         question.setText(quizzHelper.getQuestionCourante().getQuestion());
 
+        if(answer1.isChecked()) {
+           answer1.setChecked(false);
+        }
+        if(answer2.isChecked()) {
+            answer2.setChecked(false);
+        }
+        if(answer3.isChecked()) {
+            answer3.setChecked(false);
+        }
+        if(answer4.isChecked()) {
+            answer4.setChecked(false);
+        }
         answer1.setText(quizzHelper.getQuestionCourante().getPropositions().get(0));
         answer2.setText(quizzHelper.getQuestionCourante().getPropositions().get(1));
         answer3.setText(quizzHelper.getQuestionCourante().getPropositions().get(2));

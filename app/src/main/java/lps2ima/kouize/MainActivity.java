@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             //L'objet intent permet de lancer l'activité suivante : QuestionActivity
             Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
             //A voir pour les stocker par la suite sur l'application directement ou pas
+            intent.putExtra("userName", userName);
             intent.putExtra("theme", themeText);
             intent.putExtra("difficulty", difficulty);
             ////////////////////////////////////////////////////////////////////

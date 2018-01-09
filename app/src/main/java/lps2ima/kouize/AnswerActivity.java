@@ -11,7 +11,7 @@ import org.w3c.dom.Text;
 
 public class AnswerActivity extends AppCompatActivity {
 
-    Boolean lastQuestion;
+    public Boolean lastQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,18 @@ public class AnswerActivity extends AppCompatActivity {
             return;
         }
         Question question = (Question)(bundle.getSerializable("question"));
+        lastQuestion = bundle.getBoolean("lastQuestion");
 
+        TextView isTrue = (TextView) findViewById(R.id.isTrue);
         TextView answer = (TextView) findViewById(R.id.answer);
-        answer.setText(question.getReponse());
+
+        if(bundle.getString("reponse").equals(question.getReponse())) {
+            isTrue.setText("VRAI");
+        } else {
+            isTrue.setText("FAUX");
+        }
+
+        answer.setText("Réponse : " + question.getReponse());
 
         TextView anecdote = (TextView) findViewById(R.id.anecdote);
         anecdote.setText(question.getAnecdote());

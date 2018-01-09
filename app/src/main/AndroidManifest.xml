@@ -16,12 +16,18 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionActivity" />
-        <activity android:name=".AnswerActivity" />
+        <activity
+            android:name=".QuestionActivity"
+            android:label="@string/vide"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".AnswerActivity"
+            android:label="@string/vide"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
-
 </manifest>

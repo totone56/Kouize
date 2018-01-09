@@ -1,4 +1,4 @@
-package lps2ima.kouize.data;
+/*package lps2ima.kouize.data;
 
 import android.app.Application;
 import android.content.Context;
@@ -19,7 +19,7 @@ import lps2ima.kouize.R;
  * Created by Asouphie on 24/12/2017.
  */
 
-public class Tests {
+/*public class Tests {
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -28,7 +28,7 @@ public class Tests {
          *****************/
 
         //Création du quizz grâce au fichier .json
-        Context context = KouizeApp.getContext();
+        /*Context context = KouizeApp.getContext();
         File f = new File(context.getPackageResourcePath() + "/raw/culture_generale.json");
         InputStream in = context.getResources().openRawResource(R.raw.culture_generale);
         in = new BufferedInputStream(new FileInputStream(f));
@@ -76,7 +76,7 @@ public class Tests {
          ***********************/
 
         //Création de l'objet QuizzHelper
-        QuizzHelper quizzHelper = new QuizzHelper(null);
+/*        QuizzHelper quizzHelper = new QuizzHelper(null);
 
         //Initialisation de l'objet
         f = new File(context.getPackageResourcePath() + "/raw/linux.json");
@@ -91,8 +91,7 @@ public class Tests {
             System.out.println("Question " + quizzHelper.getQuestions().indexOf(question) + " : " + question.getQuestion());
         }
     }
-
-
-
-
 }
+*/
+
+

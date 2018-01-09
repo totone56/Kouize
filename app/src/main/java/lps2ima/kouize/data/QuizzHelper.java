@@ -2,8 +2,8 @@ package lps2ima.kouize.data;
 
 import android.content.Context;
 
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import lps2ima.kouize.Question;
@@ -24,18 +24,18 @@ public class QuizzHelper {
     }
 
     /**
-     * @param file - Chemin + nom du fichier .json.
+     * @param nameFile - Chemin + nom du fichier .json.
      * @param difficulte - Correspond à la difficulté du culture_generale choisi par le joueur :
      *                   <li>"débutant"</li>
      *                   <li>"confirmé"</li>
      *                   <li>"expert"</li>
      */
-    public void initQuizzHelper(File file, String difficulte) {
+    public void initQuizzHelper(String nameFile, String difficulte) {
         try {
-            questions = Parser.questionsByJson(file, difficulte);
+            questions = Parser.questionsByJson(nameFile, difficulte);
             indexQuestionCourante = 0;
-        } catch (FileNotFoundException e) {
-            e.getMessage();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
