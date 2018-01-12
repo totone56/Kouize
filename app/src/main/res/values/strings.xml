@@ -7,5 +7,9 @@
     <string name="commencer">Commencer</string>
     <string name="choix_nom">Choisissez un nom</string>
     <string name="vide"> </string>
+    <string name="result">Résultats</string>
+    <string name="bravo">Bravo !</string>
+    <string name="score">Vous avez un score de</string>
+    <string name="restart">Recommencer</string>
 
 </resources>

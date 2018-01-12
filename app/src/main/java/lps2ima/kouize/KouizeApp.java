@@ -9,9 +9,10 @@ import android.content.Context;
 
 public class KouizeApp extends Application {
 
-    public int sessionScore;
+    public int sessionScore = 0;
     public String user;
-    public int difficulty;
+    public String difficulty;
+    public String nameQuizz;
     public static Context context;
 
     @Override
@@ -28,6 +29,10 @@ public class KouizeApp extends Application {
         this.sessionScore = sessionScore;
     }
 
+    public void upScore() {
+        this.sessionScore ++;
+    }
+
     public String getUser() {
         return user;
     }
@@ -36,15 +41,23 @@ public class KouizeApp extends Application {
         this.user = user;
     }
 
-    public int getDifficulty() {
+    public String getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(int difficulty) {
+    public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
     }
 
     public static Context getContext() {
         return context;
+    }
+
+    public String getNameQuizz() {
+        return nameQuizz;
+    }
+
+    public void setNameQuizz(String nameQuizz) {
+        this.nameQuizz = nameQuizz;
     }
 }

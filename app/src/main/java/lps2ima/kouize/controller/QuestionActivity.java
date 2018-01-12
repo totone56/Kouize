@@ -1,4 +1,4 @@
-package lps2ima.kouize;
+package lps2ima.kouize.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,30 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
-
-import lps2ima.kouize.data.Parser;
-import lps2ima.kouize.data.QuizzHelper;
-
-import static java.lang.System.exit;
+import lps2ima.kouize.KouizeApp;
+import lps2ima.kouize.model.Question;
+import lps2ima.kouize.R;
+import lps2ima.kouize.model.QuizzHelper;
 
 public class QuestionActivity extends AppCompatActivity {
 
     static final int REQUEST = 1;
 
     QuizzHelper quizzHelper;
-    Bundle extras;
     RadioButton answer1;
     RadioButton answer2;
     RadioButton answer3;
@@ -58,18 +47,11 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        //Je vérifie que j'ai bien des valeurs dans mes extras.
-        extras = getIntent().getExtras();
-        if (extras == null) {
-            Toast.makeText(getApplicationContext(), "Extras == null", Toast.LENGTH_LONG);
-            return;
-        }
-
-        //Si c'est le cas, alors je récupère le QuizzHelper correspondant, avec la difficulté et le thème passé dans les extras
+        //je récupère le QuizzHelper correspondant, avec la difficulté et le thème passé dans les extras
         quizzHelper = new QuizzHelper(getApplicationContext());
 
-        String nameFile = extras.getString("theme").replace(" ", "_").toLowerCase();
-        String difficulty = extras.getString("difficulty").toLowerCase();
+        String nameFile = ((KouizeApp) getApplication()).getNameQuizz().replace(" ", "_").toLowerCase();
+        String difficulty = ((KouizeApp) getApplication()).getDifficulty().toLowerCase();
 
         //Puis l'initialise mon quizzHelper
         quizzHelper.initQuizzHelper(nameFile, difficulty);

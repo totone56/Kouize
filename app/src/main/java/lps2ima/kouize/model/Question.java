@@ -1,4 +1,4 @@
-package lps2ima.kouize;
+package lps2ima.kouize.model;
 
 import com.google.gson.annotations.SerializedName;
 

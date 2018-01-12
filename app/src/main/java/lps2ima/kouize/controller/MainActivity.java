@@ -1,4 +1,4 @@
-package lps2ima.kouize;
+package lps2ima.kouize.controller;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import lps2ima.kouize.KouizeApp;
+import lps2ima.kouize.model.Quizz;
+import lps2ima.kouize.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -101,15 +105,11 @@ public class MainActivity extends AppCompatActivity {
         userName = name.getText().toString();
         if (userName != "" && difficulty != "" && themeText != "") { // Check des paramètres
             ((KouizeApp) getApplication()).setUser(userName);
+            ((KouizeApp) getApplication()).setDifficulty(difficulty);
+            ((KouizeApp) getApplication()).setNameQuizz(themeText);
 
             //L'objet intent permet de lancer l'activité suivante : QuestionActivity
-            Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
-            //A voir pour les stocker par la suite sur l'application directement ou pas
-            intent.putExtra("userName", userName);
-            intent.putExtra("theme", themeText);
-            intent.putExtra("difficulty", difficulty);
-            ////////////////////////////////////////////////////////////////////
-            startActivity(intent);
+            startActivity(new Intent(MainActivity.this, QuestionActivity.class));
         } else {
             Toast.makeText(getApplicationContext(), "TAT PAS CLIKUER PARTOUS WESH", Toast.LENGTH_SHORT).show();
         }

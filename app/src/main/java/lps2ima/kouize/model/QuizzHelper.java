@@ -1,12 +1,9 @@
-package lps2ima.kouize.data;
+package lps2ima.kouize.model;
 
 import android.content.Context;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import lps2ima.kouize.Question;
 
 /**
  * Created by toton on 13/12/2017.

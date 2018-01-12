@@ -11,23 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".controller.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".QuestionActivity"
+            android:name=".controller.QuestionActivity"
             android:label="@string/vide"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".controller.MainActivity"></activity>
         <activity
-            android:name=".AnswerActivity"
+            android:name=".controller.AnswerActivity"
             android:label="@string/vide"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".controller.MainActivity"></activity>
+        <activity android:name=".controller.ResultActivity"
+            android:label="@string/result"></activity>
     </application>
+
 </manifest>

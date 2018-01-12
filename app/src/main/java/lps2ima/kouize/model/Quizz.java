@@ -1,9 +1,11 @@
-package lps2ima.kouize;
+package lps2ima.kouize.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lps2ima.kouize.model.Question;
 
 /**
  * Created by toton on 12/12/2017.

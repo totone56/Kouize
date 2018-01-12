@@ -1,4 +1,4 @@
-package lps2ima.kouize.data;
+package lps2ima.kouize.model;
 
 import com.google.gson.Gson;
 import java.io.BufferedReader;
@@ -12,8 +12,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 import lps2ima.kouize.KouizeApp;
-import lps2ima.kouize.Question;
-import lps2ima.kouize.Quizz;
 
 /**
  * Created by toton on 19/12/2017.

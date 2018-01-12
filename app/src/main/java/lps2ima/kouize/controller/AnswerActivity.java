@@ -1,5 +1,6 @@
-package lps2ima.kouize;
+package lps2ima.kouize.controller;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import lps2ima.kouize.KouizeApp;
+import lps2ima.kouize.model.Question;
+import lps2ima.kouize.R;
 
 public class AnswerActivity extends AppCompatActivity {
 
@@ -33,6 +36,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         if(bundle.getString("reponse").equals(question.getReponse())) {
             isTrue.setText("VRAI");
+            ((KouizeApp) getApplication()).upScore();
         } else {
             isTrue.setText("FAUX");
         }
@@ -47,11 +51,11 @@ public class AnswerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(lastQuestion) { //On affiche les résultats
-                    //TODO : Passer à l'activité des résultats
+                    startActivity(new Intent(AnswerActivity.this, ResultActivity.class));
                 } else { //On retourne sur l'activité des questions pour la question suivante
                     setResult(RESULT_OK);
-                    finish();
                 }
+                finish();
             }
         });
     }

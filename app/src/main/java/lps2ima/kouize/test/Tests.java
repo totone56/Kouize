@@ -11,8 +11,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import lps2ima.kouize.KouizeApp;
-import lps2ima.kouize.Question;
-import lps2ima.kouize.Quizz;
+import lps2ima.kouize.model.Question;
+import lps2ima.kouize.model.Quizz;
 import lps2ima.kouize.R;
 
 /**

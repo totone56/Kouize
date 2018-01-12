@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lps2ima.kouize.QuestionActivity">
+    tools:context="lps2ima.kouize.controller.QuestionActivity">
 
     <TextView
         android:id="@+id/question"
