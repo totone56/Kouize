@@ -16,9 +16,6 @@ import lps2ima.kouize.model.QuizzHelper;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    static final int REQUEST = 1;
-
-    QuizzHelper quizzHelper;
     RadioButton answer1;
     RadioButton answer2;
     RadioButton answer3;
@@ -34,7 +31,7 @@ public class QuestionActivity extends AppCompatActivity {
         answer3 = findViewById(R.id.answer3);
         answer4 = findViewById(R.id.answer4);
 
-        initView();
+        chargeView();
 
         //Button de validation de la réponse selectionné.
         Button validateAnswer = (Button) findViewById(R.id.validateAnswer);
@@ -46,36 +43,17 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    private void initView() {
-        //je récupère le QuizzHelper correspondant, avec la difficulté et le thème passé dans les extras
-        quizzHelper = new QuizzHelper(getApplicationContext());
-
-        String nameFile = ((KouizeApp) getApplication()).getNameQuizz().replace(" ", "_").toLowerCase();
-        String difficulty = ((KouizeApp) getApplication()).getDifficulty().toLowerCase();
-
-        //Puis l'initialise mon quizzHelper
-        quizzHelper.initQuizzHelper(nameFile, difficulty);
-
-        //Puis je charge la vue des questions
-        chargeView();
-    }
-
     private void chargeView() {
         TextView question = (TextView) findViewById(R.id.question);
+        QuizzHelper quizzHelper = ((KouizeApp) getApplication()).getQuizzHelper();
+
         question.setText(quizzHelper.getQuestionCourante().getQuestion());
 
-        if(answer1.isChecked()) {
-           answer1.setChecked(false);
-        }
-        if(answer2.isChecked()) {
-            answer2.setChecked(false);
-        }
-        if(answer3.isChecked()) {
-            answer3.setChecked(false);
-        }
-        if(answer4.isChecked()) {
-            answer4.setChecked(false);
-        }
+        answer1.setChecked(false);
+        answer2.setChecked(false);
+        answer3.setChecked(false);
+        answer4.setChecked(false);
+
         answer1.setText(quizzHelper.getQuestionCourante().getPropositions().get(0));
         answer2.setText(quizzHelper.getQuestionCourante().getPropositions().get(1));
         answer3.setText(quizzHelper.getQuestionCourante().getPropositions().get(2));
@@ -84,6 +62,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void changeActivity() {
         if(answer1.isChecked() || answer2.isChecked() || answer3.isChecked() || answer4.isChecked()) {
+            QuizzHelper quizzHelper = ((KouizeApp) getApplication()).getQuizzHelper();
+
             Intent intent = new Intent(QuestionActivity.this, AnswerActivity.class);
             Bundle bundle = new Bundle();
             //Je passe la question courante dans les extras de l'Intent.
@@ -103,23 +83,17 @@ public class QuestionActivity extends AppCompatActivity {
             }
             intent.putExtra("reponse", reponse);
 
-            //Si c'est la dernière question, on ne souhaite pas retourner sur la vue des questions.
-            if(quizzHelper.getQuestions().size() == quizzHelper.getIndexQuestionCourante()+1) {
-                intent.putExtra("lastQuestion", true);
-                startActivity(intent);
-            } else { //Mais si il reste des questions oui
-                intent.putExtra("lastQuestion", false);
-                startActivityForResult(intent, REQUEST);
-            }
+            Boolean lastQuestion = quizzHelper.getQuestions().size() == quizzHelper.getIndexQuestionCourante()+1;
+            intent.putExtra("lastQuestion", lastQuestion);
+            startActivity(intent);
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "WES TA OUBLIE 2 REPONDRE", Toast.LENGTH_LONG);
         }
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        //On passe à la question suivante
-        quizzHelper.questionSuivante();
-        //On change les valeurs de la page
-        chargeView();
+    public void onBackPressed() {
+        startActivity(new Intent(QuestionActivity.this, MainActivity.class));
+        finish();
     }
 }

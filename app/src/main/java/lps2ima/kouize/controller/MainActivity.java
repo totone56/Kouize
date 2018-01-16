@@ -13,6 +13,7 @@ import android.widget.Toast;
 import lps2ima.kouize.KouizeApp;
 import lps2ima.kouize.model.Quizz;
 import lps2ima.kouize.R;
+import lps2ima.kouize.model.QuizzHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
             ((KouizeApp) getApplication()).setUser(userName);
             ((KouizeApp) getApplication()).setDifficulty(difficulty);
             ((KouizeApp) getApplication()).setNameQuizz(themeText);
+
+            QuizzHelper quizzHelper = new QuizzHelper(getApplicationContext());
+            themeText = themeText.replace(" ", "_").toLowerCase();
+            difficulty = difficulty.toLowerCase();
+            quizzHelper.initQuizzHelper(themeText, difficulty);
+
+            ((KouizeApp) getApplication()).setQuizzHelper(quizzHelper);
 
             //L'objet intent permet de lancer l'activité suivante : QuestionActivity
             startActivity(new Intent(MainActivity.this, QuestionActivity.class));

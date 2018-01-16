@@ -53,10 +53,16 @@ public class AnswerActivity extends AppCompatActivity {
                 if(lastQuestion) { //On affiche les résultats
                     startActivity(new Intent(AnswerActivity.this, ResultActivity.class));
                 } else { //On retourne sur l'activité des questions pour la question suivante
-                    setResult(RESULT_OK);
+                    ((KouizeApp) getApplication()).questionSuivante();
+                    startActivity(new Intent(AnswerActivity.this, QuestionActivity.class));
                 }
                 finish();
             }
         });
+    }
+
+    public void onBackPressed() {
+        startActivity(new Intent(AnswerActivity.this, MainActivity.class));
+        finish();
     }
 }

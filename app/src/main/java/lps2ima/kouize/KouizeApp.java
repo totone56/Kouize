@@ -3,6 +3,8 @@ package lps2ima.kouize;
 import android.app.Application;
 import android.content.Context;
 
+import lps2ima.kouize.model.QuizzHelper;
+
 /**
  * Created by toton on 13/12/2017.
  */
@@ -13,6 +15,7 @@ public class KouizeApp extends Application {
     public String user;
     public String difficulty;
     public String nameQuizz;
+    public QuizzHelper quizzHelper;
     public static Context context;
 
     @Override
@@ -59,5 +62,17 @@ public class KouizeApp extends Application {
 
     public void setNameQuizz(String nameQuizz) {
         this.nameQuizz = nameQuizz;
+    }
+
+    public QuizzHelper getQuizzHelper() {
+        return quizzHelper;
+    }
+
+    public void setQuizzHelper(QuizzHelper quizzHelper) {
+        this.quizzHelper = quizzHelper;
+    }
+
+    public void questionSuivante() {
+        this.quizzHelper.questionSuivante();
     }
 }

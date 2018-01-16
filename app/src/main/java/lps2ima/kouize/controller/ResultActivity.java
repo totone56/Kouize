@@ -32,4 +32,9 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed() {
+        startActivity(new Intent(ResultActivity.this, MainActivity.class));
+        finish();
+    }
 }
