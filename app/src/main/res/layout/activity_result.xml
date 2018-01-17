@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="lps2ima.kouize.controller.ResultActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"
         android:text="@string/bravo"
-        android:textSize="36sp" />
+        android:textSize="45dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -23,7 +27,9 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:text="@string/score" />
+        android:text="@string/score"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"/>
 
     <TextView
         android:id="@+id/score"
@@ -33,15 +39,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="@string/vide"
-        android:textSize="30sp" />
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"/>
 
     <Button
         android:id="@+id/restart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="61dp"
-        android:text="@string/restart" />
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccent"
+        android:text="@string/restart"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="monospace"/>
 
 </RelativeLayout>

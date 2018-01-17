@@ -12,7 +12,6 @@ import lps2ima.kouize.model.QuizzHelper;
 public class KouizeApp extends Application {
 
     public int sessionScore = 0;
-    public String user;
     public String difficulty;
     public String nameQuizz;
     public QuizzHelper quizzHelper;
@@ -34,14 +33,6 @@ public class KouizeApp extends Application {
 
     public void upScore() {
         this.sessionScore ++;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
     }
 
     public String getDifficulty() {

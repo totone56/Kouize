@@ -17,7 +17,6 @@ import lps2ima.kouize.model.QuizzHelper;
 
 public class MainActivity extends AppCompatActivity {
 
-    String userName = "";
     String difficulty = "";
     String themeText = "";
     Context context;
@@ -102,10 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void nextActivity() {
-        final EditText name = (EditText) findViewById(R.id.nameText);
-        userName = name.getText().toString();
-        if (userName != "" && difficulty != "" && themeText != "") { // Check des paramètres
-            ((KouizeApp) getApplication()).setUser(userName);
+        if (difficulty != "" && themeText != "") { // Check des paramètres
             ((KouizeApp) getApplication()).setDifficulty(difficulty);
             ((KouizeApp) getApplication()).setNameQuizz(themeText);
 

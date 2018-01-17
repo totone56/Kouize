@@ -5,31 +5,27 @@
     <application
         android:name=".KouizeApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/question"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".controller.MainActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".controller.QuestionActivity"
-            android:label="@string/vide"
-            android:parentActivityName=".controller.MainActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".controller.AnswerActivity"
-            android:label="@string/vide"
-            android:parentActivityName=".controller.MainActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".controller.ResultActivity"
-            android:label="@string/result"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

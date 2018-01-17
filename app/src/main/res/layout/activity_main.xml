@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="lps2ima.kouize.controller.MainActivity">
 
-    <EditText
-        android:id="@+id/nameText"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="@string/choix_nom"
-        android:inputType="textPersonName"
-        android:paddingTop="100dp" />
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:textSize="60dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/okMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="monospace"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="57dp"
-        android:layout_marginEnd="13dp"
-        android:layout_weight="1"
         android:text="@string/commencer" />
 
     <Button
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="monospace"
         android:id="@+id/difficultyMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,13 +47,16 @@
         android:text="@string/difficulte" />
 
     <Button
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="monospace"
         android:id="@+id/themeMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nameText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:text="@string/theme" />
 
-</android.widget.RelativeLayout>
+</RelativeLayout>

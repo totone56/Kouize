@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="lps2ima.kouize.controller.QuestionActivity">
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
-        android:text="CECI EST UNE QUESTION QUESTION QUESTION QUESTION QUESTION"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:padding="22dp"
+        android:background="@drawable/my_border_answer"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="monospace"
+        android:textSize="15dp"
+        android:text="CECI EST UNE QUESTION" />
 
     <RadioGroup
         android:id="@+id/answerGroup"
@@ -24,45 +28,60 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/question"
         android:layout_below="@+id/question"
-        android:layout_marginTop="75dp">
+        android:gravity="center_horizontal"
+        android:layout_above="@id/validateAnswer">
 
         <RadioButton
             android:id="@+id/answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Réponse 1" />
+            android:text="Réponse 1"
+            android:fontFamily="monospace"
+            android:textSize="15dp"
+            android:textColor="@color/white"/>
 
         <RadioButton
             android:id="@+id/answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Réponse 2" />
+            android:text="Réponse 2"
+            android:fontFamily="monospace"
+            android:textSize="15dp"
+            android:textColor="@color/white" />
 
         <RadioButton
             android:id="@+id/answer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Réponse 3" />
+            android:text="Réponse 3"
+            android:fontFamily="monospace"
+            android:textSize="15dp"
+            android:textColor="@color/white" />
 
         <RadioButton
             android:id="@+id/answer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="La réponse D" />
+            android:text="La réponse D"
+            android:fontFamily="monospace"
+            android:textSize="15dp"
+            android:textColor="@color/white" />
     </RadioGroup>
 
     <Button
         android:id="@+id/validateAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="17dp"
-        android:layout_marginEnd="29dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="monospace"
         android:text="Valider" />
 
 </android.widget.RelativeLayout>
