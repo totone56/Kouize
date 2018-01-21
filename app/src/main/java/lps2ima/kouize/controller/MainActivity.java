@@ -7,13 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import lps2ima.kouize.KouizeApp;
+import lps2ima.kouize.model.KouizeApp;
 import lps2ima.kouize.model.Quizz;
 import lps2ima.kouize.R;
-import lps2ima.kouize.model.QuizzHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Permet de créer la pop-up de sélection des thèmes.
+     * @param buttonText
+     */
     private void createDialogTheme(final Button buttonText) {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setTitle("Choix de Thème");
@@ -78,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
     }
 
+    /**
+     * Permet de créer la pop-up de sélection des difficultés.
+     * @param buttonText
+     */
     private void createDialogDifficulty(final Button buttonText) {
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
         builder.setTitle("Choix de difficulte");
@@ -100,20 +106,17 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
     }
 
+    /**
+     * Permet de passer d'une activité à l'autre, donc de la première activité de selection
+     * à celle des questions.
+     */
     private void nextActivity() {
         if (difficulty != "" && themeText != "") { // Check des paramètres
-            ((KouizeApp) getApplication()).setDifficulty(difficulty);
-            ((KouizeApp) getApplication()).setNameQuizz(themeText);
-
-            QuizzHelper quizzHelper = new QuizzHelper(getApplicationContext());
-            themeText = themeText.replace(" ", "_").toLowerCase();
-            difficulty = difficulty.toLowerCase();
-            quizzHelper.initQuizzHelper(themeText, difficulty);
-
-            ((KouizeApp) getApplication()).setQuizzHelper(quizzHelper);
+            ((KouizeApp) getApplication()).initKouizeApp(themeText, difficulty);
 
             //L'objet intent permet de lancer l'activité suivante : QuestionActivity
             startActivity(new Intent(MainActivity.this, QuestionActivity.class));
+            finish();
         } else {
             Toast.makeText(getApplicationContext(), "TAT PAS CLIKUER PARTOUS WESH", Toast.LENGTH_SHORT).show();
         }

@@ -3,7 +3,7 @@
     package="lps2ima.kouize">
 
     <application
-        android:name=".KouizeApp"
+        android:name=".model.KouizeApp"
         android:allowBackup="true"
         android:icon="@mipmap/question"
         android:label="@string/app_name"

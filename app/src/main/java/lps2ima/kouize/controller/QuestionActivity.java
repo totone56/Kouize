@@ -9,10 +9,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import lps2ima.kouize.KouizeApp;
+import lps2ima.kouize.model.KouizeApp;
 import lps2ima.kouize.model.Question;
 import lps2ima.kouize.R;
-import lps2ima.kouize.model.QuizzHelper;
 
 public class QuestionActivity extends AppCompatActivity {
 
@@ -43,34 +42,34 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Permet de charger la vue des questions
+     */
     private void chargeView() {
-        TextView question = (TextView) findViewById(R.id.question);
-        QuizzHelper quizzHelper = ((KouizeApp) getApplication()).getQuizzHelper();
+        TextView textQuestion = (TextView) findViewById(R.id.question);
+        Question question = ((KouizeApp) getApplication()).getQuestionCourante();
 
-        question.setText(quizzHelper.getQuestionCourante().getQuestion());
+        textQuestion.setText(question.getQuestion());
 
         answer1.setChecked(false);
         answer2.setChecked(false);
         answer3.setChecked(false);
         answer4.setChecked(false);
 
-        answer1.setText(quizzHelper.getQuestionCourante().getPropositions().get(0));
-        answer2.setText(quizzHelper.getQuestionCourante().getPropositions().get(1));
-        answer3.setText(quizzHelper.getQuestionCourante().getPropositions().get(2));
-        answer4.setText(quizzHelper.getQuestionCourante().getPropositions().get(3));
+        answer1.setText(question.getPropositions().get(0));
+        answer2.setText(question.getPropositions().get(1));
+        answer3.setText(question.getPropositions().get(2));
+        answer4.setText(question.getPropositions().get(3));
     }
 
+    /**
+     * Permet de changer de vue, c'est à dire de passer de la vue des questions à la vue de la réponse correspondante.
+     */
     private void changeActivity() {
+        //Si seulement une réponse est cochée, alors on peut changer de vue.
         if(answer1.isChecked() || answer2.isChecked() || answer3.isChecked() || answer4.isChecked()) {
-            QuizzHelper quizzHelper = ((KouizeApp) getApplication()).getQuizzHelper();
-
             Intent intent = new Intent(QuestionActivity.this, AnswerActivity.class);
-            Bundle bundle = new Bundle();
-            //Je passe la question courante dans les extras de l'Intent.
-            bundle.putSerializable("question", (Question) quizzHelper.getQuestionCourante());
-            intent.putExtras(bundle);
 
-            //Plus la réponse selectionné.
             String reponse = "";
             if(answer1.isChecked()) {
                 reponse = answer1.getText().toString();
@@ -83,7 +82,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
             intent.putExtra("reponse", reponse);
 
-            Boolean lastQuestion = quizzHelper.getQuestions().size() == quizzHelper.getIndexQuestionCourante()+1;
+            Boolean lastQuestion = ((KouizeApp) getApplication()).getListQuestions().size() == ((KouizeApp) getApplication()).getIndexQuestion()+1;
             intent.putExtra("lastQuestion", lastQuestion);
             startActivity(intent);
             finish();
@@ -91,6 +90,10 @@ public class QuestionActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "WES TA OUBLIE 2 REPONDRE", Toast.LENGTH_LONG);
         }
     }
+
+    /**
+     * Méthode utilisé lors d'un clic sur le bouton retour du téléphone.
+     */
 
     public void onBackPressed() {
         startActivity(new Intent(QuestionActivity.this, MainActivity.class));

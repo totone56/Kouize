@@ -11,8 +11,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-import lps2ima.kouize.KouizeApp;
-
 /**
  * Created by toton on 19/12/2017.
  */
@@ -20,11 +18,15 @@ import lps2ima.kouize.KouizeApp;
 public class Parser {
 
     /**
-     * @param nameFile - fichier .json
-     * @return le culture_generale souhaité.
+     * @param nameFile       - fichier .json
+     * @param difficulty - correspondant au niveau de difficulté du culture_generale :
+     *                   <li>"débutant"</li>
+     *                   <li>"confirmé"</li>
+     *                   <li>"expert"</li>
+     * @return une ArrayList contenant les questions souhaitées.
      * @throws FileNotFoundException
      */
-    public static Quizz quizzByJson(String nameFile) throws IOException {
+    public static ArrayList<Question> questionsByJson(String nameFile, String difficulty) throws IOException {
         int rawId = KouizeApp.getContext().getResources().getIdentifier(nameFile, "raw",
                 KouizeApp.getContext().getPackageName());
 
@@ -43,20 +45,7 @@ public class Parser {
             is.close();
         }
 
-        return new Gson().fromJson(writer.toString(), Quizz.class);
-    }
-
-    /**
-     * @param nameFile       - fichier .json
-     * @param difficulte - correspondant au niveau de difficulté du culture_generale :
-     *                   <li>"débutant"</li>
-     *                   <li>"confirmé"</li>
-     *                   <li>"expert"</li>
-     * @return une ArrayList contenant les questions souhaitées.
-     * @throws FileNotFoundException
-     */
-    public static ArrayList<Question> questionsByJson(String nameFile, String difficulte) throws IOException {
-        Quizz quizzCourant = quizzByJson(nameFile);
-        return quizzCourant.getQuizz().get(difficulte);
+        Quizz quizz = new Gson().fromJson(writer.toString(), Quizz.class);
+        return quizz.getQuizz().get(difficulty);
     }
 }
